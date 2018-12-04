@@ -10,5 +10,6 @@ package com.mycompany.parcialfinal.services;
  * @author 2108263
  */
 public interface TemperatureService {
-     public String convert(String value,String letter);
+     public String convertToF(String value);
+     public String convertToC(String value);
 }

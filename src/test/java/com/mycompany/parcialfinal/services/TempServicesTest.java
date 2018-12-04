@@ -43,14 +43,12 @@ public class TempServicesTest {
     @Test
     public void testConvert() {
         System.out.println("convert");
-        String value = "";
-        String letter = "";
+        String value = "10";
         TempServices instance = new TempServices();
-        String expResult = "";
-        String result = instance.convert(value, letter);
+        String expResult = "50";
+        String result = instance.convertToF(value);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

@@ -1,1 +1,4 @@
+com\mycompany\parcialfinal\services\TemperatureService.class
+com\mycompany\parcialfinal\services\TempServices.class
 com\mycompany\parcialfinal\Main.class
+com\mycompany\parcialfinal\controller\TemperatureApiController.class

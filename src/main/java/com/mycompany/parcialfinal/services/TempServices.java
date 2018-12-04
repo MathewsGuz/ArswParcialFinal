@@ -5,6 +5,7 @@
  */
 package com.mycompany.parcialfinal.services;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,15 +19,17 @@ public class TempServices implements TemperatureService {
     public String answer;
     
     @Override
-    public String convert(String value,String letter){
-        if(letter=="F"){
+    public String convertToF(String value){
             hot=Integer.valueOf(value)*(9/5) + 32;
-            answer=String.valueOf(Integer.valueOf(value)*(9/5) + 32);
-        }
-        else if(letter=="C"){
-            hot = (Integer.valueOf(value)-32)/(9/5);
-            answer=String.valueOf((Integer.valueOf(value)-32)/(9/5));  
-        }
+            answer=String.valueOf((Integer.valueOf(value)*(9/5)) + 32);  
         return answer;
     }
+
+    @Override
+    public String convertToC(String value) {
+       hot = (Integer.valueOf(value)-32)/(9/5);
+       answer=String.valueOf((Integer.valueOf(value)-32)/(9/5));
+       return answer;
+    }
+    
 }
