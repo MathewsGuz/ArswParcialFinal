@@ -21,14 +21,14 @@ public class TempServices implements TemperatureService {
     @Override
     public String convertToF(String value){
             hot=Integer.valueOf(value)*(9/5) + 32;
-            answer=String.valueOf((Integer.valueOf(value)*(9/5)) + 32);  
+            answer=String.valueOf((Integer.valueOf(value)*(1.8)) + 32);  
         return answer;
     }
 
     @Override
     public String convertToC(String value) {
-       hot = (Integer.valueOf(value)-32)/(9/5);
-       answer=String.valueOf((Integer.valueOf(value)-32)/(9/5));
+//       hot = (Integer.valueOf(value)-32)/(1.8);
+       answer=String.valueOf((Integer.valueOf(value)-32)/(1.8));
        return answer;
     }
     

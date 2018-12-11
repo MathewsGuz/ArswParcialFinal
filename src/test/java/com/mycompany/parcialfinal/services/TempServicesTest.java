@@ -45,7 +45,7 @@ public class TempServicesTest {
         System.out.println("convert");
         String value = "10";
         TempServices instance = new TempServices();
-        String expResult = "50";
+        String expResult = "50.0";
         String result = instance.convertToF(value);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

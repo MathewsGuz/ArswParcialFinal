@@ -30,7 +30,7 @@ public class TemperatureApiController {
     @Autowired
     TemperatureService temp;
     
-    @RequestMapping(method = RequestMethod.GET,value="/value")
+    @RequestMapping(method = RequestMethod.GET,value="/F/{value}")
     public ResponseEntity<?> getTempF(@PathVariable("value") String hot){
         try{
             return new ResponseEntity<>(temp.convertToF(hot),HttpStatus.ACCEPTED);
@@ -39,13 +39,13 @@ public class TemperatureApiController {
             return new ResponseEntity<>("Error",HttpStatus.NOT_FOUND);
         }
     }
-//    @RequestMapping(method = RequestMethod.GET,value="/{value}")
-//    public ResponseEntity<?> getTempC(@PathVariable("value") String hot){
-//        try{
-//            return new ResponseEntity<>(temp.convertToC(hot),HttpStatus.ACCEPTED);
-//        } catch (Exception e) {
-//            Logger.getLogger(TempServices.class.getName()).log(Level.SEVERE, null, e);
-//            return new ResponseEntity<>("Error",HttpStatus.NOT_FOUND);
-//        }
-//    }
+    @RequestMapping(method = RequestMethod.GET,value="/C/{value}")
+    public ResponseEntity<?> getTempC(@PathVariable("value") String hot){
+        try{
+            return new ResponseEntity<>(temp.convertToC(hot),HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            Logger.getLogger(TempServices.class.getName()).log(Level.SEVERE, null, e);
+            return new ResponseEntity<>("Error",HttpStatus.NOT_FOUND);
+        }
+    }
 }

@@ -5,19 +5,36 @@
  */
 var TempControllModule =(function(){
    var sendTempF=function(){
+       var valor =document.getElementById('value').value;
         var callback ={
             onSuccess: function(answer){
                 console.log(answer);
+                document.getElementById('respuesta').innerHTML=answer;
             },
             onFailed: function(answer){
                 alert("la peticion no pudo ser completada");
                 console.log(answer);
             }
         };
-       RestControllerModule.getTempF(callback);
+       RestControllerModule.getTempF(valor,callback);
     };
+    var sendTempC=function(){
+        var valor =document.getElementById('value').value;
+        var callback ={
+            onSuccess: function(answer){
+                console.log(answer);
+                document.getElementById('respuesta').innerHTML=answer;
+            },
+            onFailed: function(answer){
+                alert("la peticion no pudo ser completada");
+                console.log(answer);
+            }
+        };
+        RestControllerModule.getTempC(valor,callback);
+    }
     return{
-        sendTempF: sendTempF
+        sendTempF: sendTempF,
+        sendTempC: sendTempC
     };
 })();
 
